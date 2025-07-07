@@ -9,6 +9,6 @@ RUN yarn global add pm2
 COPY ./ ./
 RUN yarn build
 
-EXPOSE 4004
+EXPOSE 3000
 
 CMD [ "pm2-runtime", "start", "npm", "--", "run", "start:dev" ]

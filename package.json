@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:local": "NODE_ENV=local nest start --watch",
-    "start:dev": "pm2 start --name server npm -- run start:dev",
+    "start:dev": "pm2 start --name server npm -- run start:local",
     "start:prod": "pm2 start ecosystem.config.js --env prod",
     "start:debug": "nest start --debug --watch",
     "gen-dto": "node ./src/base/graphql/script/gen-dto.js",

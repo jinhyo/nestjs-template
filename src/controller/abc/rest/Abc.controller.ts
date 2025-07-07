@@ -8,10 +8,16 @@ import {
   Param,
 } from '@nestjs/common';
 import { GetAbcByIdHandler } from '@application/abc/handler/GetAbcById.handler';
+import { CreateAbcHandler } from '@application/abc/handler/CreateAbc.handler';
+import { AbcResDto } from '../dto/Abc.res.dto';
+import { CreateAbcReqDto } from '../dto/CreateAbc.req.dto';
 
 @Controller('abc')
 export class AbcController {
-  constructor(private readonly getAbcByHandler: GetAbcByIdHandler) {}
+  constructor(
+    private readonly getAbcByHandler: GetAbcByIdHandler,
+    private readonly createAbcHandler: CreateAbcHandler,
+  ) {}
 
   @Get(':id')
   findOne(@Param('id') id: string) {
@@ -19,17 +25,13 @@ export class AbcController {
   }
 
   @Post()
-  create(@Body() createAbcDto: any) {
-    return { message: 'abc 생성', data: createAbcDto };
-  }
+  async createAbc(@Body() createAbcDto: CreateAbcReqDto) {
+    const abc = await this.createAbcHandler.handle(
+      createAbcDto.name,
+      createAbcDto.age,
+      createAbcDto.isActive,
+    );
 
-  @Put(':id')
-  update(@Param('id') id: string, @Body() updateAbcDto: any) {
-    return { message: `abc ${id} 수정`, data: updateAbcDto };
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return { message: `abc ${id} 삭제` };
+    return new AbcResDto(abc);
   }
 }
