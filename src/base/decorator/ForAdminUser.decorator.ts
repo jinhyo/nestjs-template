@@ -1,4 +1,4 @@
-import { LoginGuard } from '@base/guard/Login.guard';
+import { LoginGuard } from '@base/guard/Login.token.guard';
 import { applyDecorators, SetMetadata, UseGuards } from '@nestjs/common';
 
 export function ForAdminUser() {
