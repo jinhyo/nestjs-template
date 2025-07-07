@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { AbcServiceModule } from './domain/abc/Abc.service.module';
+import { AbcServiceModule } from './abc/Abc.service.module';
 
 @Module({
   imports: [AbcServiceModule],

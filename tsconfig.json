@@ -16,6 +16,13 @@
     "forceConsistentCasingInFileNames": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
-    "noFallthroughCasesInSwitch": false
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@base/*": ["src/base/*"],
+      "@application/*": ["src/application/*"],
+      "@controller/*": ["src/controller/*"],
+      "@entity/*": ["src/entity/*"],
+      "@repository/*": ["src/repository/*"]
+    }
   }
 }

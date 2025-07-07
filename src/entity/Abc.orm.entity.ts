@@ -1,11 +1,22 @@
-import { BaseDateOrmEntity } from 'src/base/database/BaseDate.orm.entity';
+import { BaseDateOrmEntity } from '@base/database/BaseDate.orm.entity';
 import { Column, Entity } from 'typeorm';
 
 @Entity({ name: 'abc' })
-export class AbcOrmEntity extends BaseDateOrmEntity {
+export class AbcEntity extends BaseDateOrmEntity {
   @Column()
   name: string;
 
   @Column()
-  description: number;
+  age: number;
+
+  @Column()
+  isActive: boolean;
+
+  static create(name: string, age: number, isActive: boolean): AbcEntity {
+    const abc = new AbcEntity();
+    abc.name = name;
+    abc.age = age;
+    abc.isActive = isActive;
+    return abc;
+  }
 }

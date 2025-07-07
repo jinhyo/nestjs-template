@@ -7,7 +7,7 @@ import {
   Body,
   Param,
 } from '@nestjs/common';
-import { GetAbcByIdHandler } from 'src/service/domain/abc/query/GetAbcById.handler';
+import { GetAbcByIdHandler } from '@application/abc/handler/GetAbcById.handler';
 
 @Controller('abc')
 export class AbcController {

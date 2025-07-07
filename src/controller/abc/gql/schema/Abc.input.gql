@@ -1,0 +1,5 @@
+input CreateAbcInput {
+  name: String!
+  age: Int!
+  isActive: Boolean!
+}

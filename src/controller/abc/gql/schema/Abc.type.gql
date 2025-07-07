@@ -1,0 +1,6 @@
+type Abc {
+  id: Int!
+  name: String!
+  age: Int!
+  isActive: Boolean!
+}

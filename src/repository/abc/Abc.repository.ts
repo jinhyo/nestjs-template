@@ -1,14 +1,14 @@
-import { BaseOrmRepository } from 'src/base/database/Base.repository';
-import { AbcOrmEntity } from 'src/entity/Abc.orm.entity';
 import { Repository } from 'typeorm';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
+import { BaseOrmRepository } from '@base/database/Base.repository';
+import { AbcEntity } from '@entity/Abc.orm.entity';
 
 @Injectable()
-export class AbcRepository extends BaseOrmRepository<AbcOrmEntity> {
+export class AbcRepository extends BaseOrmRepository<AbcEntity> {
   constructor(
-    @InjectRepository(AbcOrmEntity)
-    repository: Repository<AbcOrmEntity>,
+    @InjectRepository(AbcEntity)
+    repository: Repository<AbcEntity>,
   ) {
     super(repository);
   }
